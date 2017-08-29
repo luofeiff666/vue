@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+    <script src="bower_components/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <my-aaa></my-aaa>
+</div>
+
+<!--//单独放到某个地方-->
+<script type="x-template" id="aaa">
+    <h3 @click='change'>
+    标题-->{{msg}}
+    </h3>
+</script>
+<script>
+    new Vue({
+        el: '#box',
+        components: {
+            'my-aaa': {
+                data(){
+                    return {msg:'welcome vue'}
+                },
+                methods:{
+                    change(){
+                        this.msg='改变后的组件'
+                    }
+                },
+                template: '#aaa'
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+    <script src="bower_components/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <my-aaa></my-aaa>
+</div>
+<script>
+    //第二个用法 全局的
+/*    Vue.component('my-aaa',
+        {
+            template: '<strong>我是自定义组件全局的</strong>'
+        });
+
+    new Vue({
+        el: '#box',
+    });*/
+    //局部的
+    new Vue({
+        el: '#box',
+        components: {
+            'my-aaa': {
+                template: '<strong>我是自定义组件2局部的</strong>'
+            }
+        }
+    });
+</script>
+</body>
+</html>

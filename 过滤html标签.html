@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+<div id="div">
+    <input type="text" v-model="msg | fiterHtml">
+    <span v-html="msg"></span>
+</div>
+<script>
+    Vue.filter('fiterHtml', {
+        read: function (input) {//model->view 这个过程
+            return input.replace(/<[^<+]>/g, '');
+        },
+        write: function () {//view->model
+
+        }
+    });
+    new Vue({
+        data: {
+            msg: '<strong>Welcome</strong>'
+        }
+    }).$mount('#div')
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app1">
+    <!--v-if根据seen的布尔值判断-->
+    <p v-if="seen">现在可以看得见</p>
+</div>
+<script src="../vue.js"></script>
+<script>
+    var a=new Vue({
+        el:'#app1',
+        data:{
+            seen:true
+        }
+    })
+</script>
+</body>
+</html>

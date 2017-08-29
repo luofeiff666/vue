@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+<div id="div">
+    <span>{{a | toDo}}</span>
+</div>
+<script>
+    Vue.filter('toDo', function (input) {
+//        alert(a,b);
+        return input < 10 ? '0' + input : '' + input;
+    });
+    new Vue({
+        data: {
+            a: 9
+        }
+    }).$mount('#div')
+</script>
+</body>
+</html>

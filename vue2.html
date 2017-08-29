@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <input type="text" v-model="msg"> </br>
+    <input type="text" v-model="msg2"></br> <!--v-model指令 一般用于表单的
+    数据双向绑定 同步更改-->
+    {{msg}}</br>
+    {{arr}} </br>
+    {{json}} </br>
+</div>
+<script src="../vue.js"></script>
+<script>
+    (function vue() {
+        var vm = new Vue({//new一个实例
+            el: '#box',//选择器
+            data: {
+                msg: 'Wlcome Vue',//元素信息
+                msg2: 12121212,
+                arr: ['张三', '历史', '王五'],
+                json:{a:'red',b:'yellow',c:'green'}
+            }
+        });
+    })()
+    //使用vue 两点
+    //1.写一个代码片段
+    //2.new一个vue实例
+</script>
+</body>
+</html>

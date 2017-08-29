@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    {{msg}}
+    <!--代码片段-->
+</div>
+<script src="../vue.js"></script>
+<script>
+    (function vue() {
+        var vm = new Vue({//new一个实例
+            el: '#box',//选择元素
+            data: {
+                msg: 'Wlcome Vue'//元素信息
+            }
+        });
+    })()
+    //使用vue 两点
+    //1.写一个代码片段
+    //2.new一个vue实例
+</script>
+</body>
+</html>

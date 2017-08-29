@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- <script src="vue.min.js"></script>-->
+    <script src="vue1.0.js"></script>
+</head>
+<body>
+<div id="div">
+    {{msg | json}}
+    {{msg2}}
+</div>
+<script>
+
+    //监听数据 浅度监视
+    /*  var vm = new Vue({
+          el: '#div',
+          data: {
+              msg: {name: '啊啊啊', age: '17'},
+              msg2: 'hello'
+          }
+      });
+      //浅度监视 不能监视json  对象
+      vm.$watch('msg2', function () {
+          console.log('发生变化');
+          this.msg.age = 19;
+      });
+      document.onclick = function () {
+          vm.msg2='jck';
+      }*/
+    //深度监视
+    var vm = new Vue({
+        el: '#div',
+        data: {
+            msg: {name: '啊啊啊', age: '17'},
+            msg2: 'hello'
+        }
+    });
+    //,{deep:true}深度监视
+    vm.$watch('msg', function () {
+        console.log('发生变化');
+        this.msg.age = 19;
+    },{deep:true});
+    document.onclick = function () {
+        vm.msg.name='jck';
+    }
+</script>
+</body>
+</html>

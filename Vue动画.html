@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="bower_components/vue/dist/vue.js"></script>
+    <style>
+        .div {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        /*css中动画效果三步骤
+        1.动画时间fade-transition
+        2.动画进入状态fade-enter
+        3.动画离开状态fade-leave
+
+        */
+        .fade-transition{
+            transition: 1s all ease;
+        }
+        .fade-enter{
+            opacity: 0;
+            transform: translateX(200px);
+        }
+        .fade-leave{
+            opacity: 0;
+            transform: translateX(200px);
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <input type="button" value="按钮" @click="toggle">
+    <!--transition="fade"动画格式-->
+    <div class="div" v-show="bSign" transition="fade"></div>
+</div>
+<!--suppress JSAnnotator -->
+<script>
+    //vue动画本质是走css3的
+    new Vue({
+        el: '#box',
+        data:{
+            bSign:true
+        },
+        methods: {
+            /* toggle:function () {
+                 alert(1)
+             }*/
+            //这是上面的语法缩写格式
+            toggle() {
+             /*   if(this.bSign===true){
+                    this.bSign=false;
+                }else {
+                    this.bSign=true
+                }*/
+                //这是上面的语法缩写格式
+                this.bSign=!this.bSign;
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

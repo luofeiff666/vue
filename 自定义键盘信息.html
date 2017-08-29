@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <!-- <script src="vue.min.js"></script>-->
+    <script src="vue1.0.js"></script>
+</head>
+<body>
+<div id="div">
+    <input type="text" @keydown.ctrl="show">
+</div>
+<script>
+    //document
+    //自定义键盘信息 vue1.0支持
+    //ctrl的键码是17
+    Vue.directive('on').keyCodes.ctrl=17;
+
+    new Vue({
+        el: '#div',
+  /*      data: {
+            msg: '<strong>Welcome</strong>'
+        },*/
+        methods: {
+            show: function () {
+                alert(1);
+            }
+        }
+    })
+</script>
+</body>
+</html>

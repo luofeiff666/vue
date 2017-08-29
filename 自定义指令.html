@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+<div id="div">
+    <input type="text" v-model="msg">
+    </br>
+    <span v-red>{{msg}}</span>
+</div>
+<script>
+    //自定义指令
+    Vue.directive('red',function (el) {//指令是必须是V-后面的指令名字
+        this.el=el;
+        this.el.style.background='red'
+    });
+    new Vue({
+        data: {
+            msg: '<strong>Welcome</strong>'
+        }
+    }).$mount('#div')
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+<div id="div">
+    <span>{{a | Date}}</span>
+</div>
+<script>
+    Vue.filter('Date', function (input) {
+        var  now =new Date(input);
+        var year=now.getFullYear();
+        var month=now.getMonth()+1;
+        var data=now.getDay();
+        function cD(s) {
+            return s < 10 ? '0' + s : '' + s;
+        }
+        return year+"-"+cD(month)+"-"+cD(data)
+    });
+    new Vue({
+        data: {
+            a:Date.now()
+        }
+    }).$mount('#div')
+</script>
+</body>
+</html>
